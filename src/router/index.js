@@ -69,7 +69,12 @@ const routes = [
       requireAuth: true // 需要验证登录状态
     }
   },
- 
+  {
+    path:'/addCartSuccess',
+    name:'AddCartSuccess',
+    component:()=> import('../views/AddCartSuccess.vue'),
+    
+  },
 ]
 
 const router = new Router({

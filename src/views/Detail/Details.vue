@@ -117,7 +117,15 @@ export default {
             this.getDetails(val);
             this.getDetailsPicture(val);
         },
+        //跳转到成功页时刷新页面
+        $route(to, from) {
+          if(to.name=='AddCartSuccess'){
+            window.location.reload();
+          }
     },
+    },
+
+
     methods: {
         ...mapActions(["unshiftShoppingCart", "addShoppingCartNum"]),
         // 获取商品详细信息
@@ -160,7 +168,8 @@ export default {
                 user_id: this.$store.getters.getUser.user_id,
                 product_id: this.productID,
             })
-                .then((res) => {
+            
+            .then((res) => {
                 switch (res.data.code) {
                     case "001":
                         // 新加入购物车成功
@@ -181,7 +190,11 @@ export default {
                         this.notifyError(res.data.msg);
                 }
             })
-                .catch((err) => {
+            .then(()=>{
+              sessionStorage.setItem("SKUINFO",JSON.stringify(this.productDetails));
+              this.$router.push({name:'AddCartSuccess'})
+            })
+            .catch((err) => {
                 return Promise.reject(err);
             });
         },
