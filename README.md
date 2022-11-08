@@ -4,7 +4,6 @@
 
 > 本项目采用前后端分离，前端为模仿旧版小米网站
 
-> 项目后端接口地址(https://github.com/hai-27/store-server) 。
 
 >
 
@@ -31,7 +30,7 @@
 ```
 1. Clone project
 
-git clone https://github.com/hai-27/vue-store.git
+git clone https://github.com/cjx1234/mistore.git
 
 2. Project setup
 
