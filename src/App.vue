@@ -35,10 +35,10 @@
             </li>
             <li :class="getNum > 0 ? 'shopCart-full' : 'shopCart'" class="shop">
               <router-link to="/shoppingCart">
-                <i class="el-icon-shopping-cart-full" style="color: white">
+                <i class="el-icon-shopping-cart-full font"  >
                   购物车</i
                 >
-                <span class="num" style="color: white">({{ getNum }})</span>
+                <span class="num" >({{ getNum }})</span>
               </router-link>
               <div class="shopping">
                 <div class="menu-content">
@@ -120,7 +120,7 @@
           </div>
           <el-menu-item index="/">首页</el-menu-item>
           <el-menu-item index="/goods">全部商品</el-menu-item>
-          <el-menu-item index="/about">关于我们</el-menu-item>
+          
 
           <div class="so">
             <el-input placeholder="请输入搜索内容" v-model="search">
@@ -335,6 +335,7 @@ a:hover {
 .topbar .nav .shopCart {
   width: 120px;
   background: #424242;
+  
 }
 .topbar .nav .shopCart:hover {
   background: #fff;
@@ -344,7 +345,16 @@ a:hover {
 }
 .topbar .nav .shopCart-full {
   width: 120px;
-  background: #ff6700;
+  background: #ff6700;  
+}
+.topbar .nav .shopCart-full a{
+ color: #fff;  
+}
+.topbar .nav .shopCart-full:hover {
+  background: #fff;
+}
+.topbar .nav .shopCart-full:hover a {
+  color: #ff6700;
 }
 .shop {
   transition: all 0.2s;
@@ -356,16 +366,21 @@ a:hover {
   top: 40px;
   z-index: 31;
   width: 316px;
-  height: 0px;
+  /* height: 0px; */
+  max-height: 0px;
   color: #424242;
   background: #fff;
   box-shadow: 0 2px 10px rgb(0 0 0 /15%);
   overflow: hidden;
-  transition: height 0.3s;
+  transition:  0.5s;
   margin-right: 147px;
 }
+.shop:hover .font{
+  color: #ff6700;
+}
 .shop:hover .shopping {
-  height: auto;
+  /* height: auto; */
+  max-height: 350px;
 }
 .shopping .menu-content {
   padding: 20px 0 0;
